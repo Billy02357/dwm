@@ -8,7 +8,7 @@
 /* appearance */
 static const unsigned int borderpx = 2;   /* border pixel of windows */
 static const unsigned int snap     = 32;  /* snap pixel */
-static const unsigned int gappx    = 6;   /* pixel gap between clients */
+static const unsigned int gappx    = 10;   /* pixel gap between clients */
 static const int showbar           = 1;   /* 0 means no bar */
 static const int topbar            = 1;   /* 0 means bottom bar */
 static const int horizpadbar       = 6;   /* horizontal padding for statusbar */
@@ -46,7 +46,7 @@ static const unsigned int alphas[][3] = {
 
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
-static const char *tags[] = { "", "2", "3", "4", "5", "6", "7", "", "" };
+static const char *tags[] = { "", "2", "3", "4", "5", "6", "7", "8", "" };
 
 
 static const Rule rules[] = {
@@ -89,7 +89,7 @@ static const Layout layouts[] = {
 /* dmenu */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* If you are using the standard dmenu program, use the following. */
-static const char *dmenucmd[]    = { "rofi -show run", NULL };
+static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL };
 /* If you are using the dmenu-distrotube-git program, use the following for a cooler dmenu! */
 /* static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL }; */
 
