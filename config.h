@@ -8,7 +8,7 @@
 /* appearance */
 static const unsigned int borderpx = 2;   /* border pixel of windows */
 static const unsigned int snap     = 32;  /* snap pixel */
-static const unsigned int gappx    = 10;   /* pixel gap between clients */
+static const unsigned int gappx    = 20;   /* pixel gap between clients */
 static const int showbar           = 1;   /* 0 means no bar */
 static const int topbar            = 1;   /* 0 means bottom bar */
 static const int horizpadbar       = 6;   /* horizontal padding for statusbar */
@@ -89,9 +89,10 @@ static const Layout layouts[] = {
 /* dmenu */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* If you are using the standard dmenu program, use the following. */
-static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL };
+static const char *dmenucmd[]    = { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
 /* If you are using the dmenu-distrotube-git program, use the following for a cooler dmenu! */
 /* static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL }; */
+static const char *roficmd[]	= { "rofi", "-show", "run", NULL };
 
 /* the st terminal with tabbed */
 static const char *termcmd[]     = { "alacritty", NULL };
@@ -104,6 +105,7 @@ static Key keys[] = {
 	{ MODKEY,		XK_p,	   spawn,          {.v = dmenucmd } },
 	{ MODKEY,               XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask,             XK_Return, spawn,          {.v = tabtermcmd } },
+	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
 	{ MODKEY,               XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     XK_k,      rotatestack,    {.i = -1 } },
