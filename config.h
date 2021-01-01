@@ -96,9 +96,11 @@ static const char *roficmd[]	= { "rofi", "-show", "run", NULL };
 
 /* the st terminal with tabbed */
 static const char *termcmd[]     = { "alacritty", NULL };
-/* An alternative way to launch st along with the fish shell */
-/* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
+
+/* Kira the process killer */
+
+static const char *kiracmd[]	 = { "bash", "~/.scripts/killer" };
 
 static Key keys[] = {
 	/* modifier             key        function        argument */
@@ -150,6 +152,7 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,        XK_l,    spawn,          CMD("alacritty -e lynx gopher://distro.tube") },
 	{ MODKEY|Mod1Mask,        XK_n,    spawn,          CMD("alacritty -e newsboat") },
 	{ MODKEY|Mod1Mask,        XK_r,    spawn,          CMD("alacritty -e rtv") },
+	{ MODKEY|Mod1Mask,	  XK_k,	   spawn,	   CMD("alacritty -e bash ~/.scripts/killer") },
 	
     /* Dmenu scripts launched with ALT + CTRL + KEY */
 	{ Mod1Mask|ControlMask, XK_e,      spawn,          CMD("./.dmenu/dmenu-edit-configs.sh") },
