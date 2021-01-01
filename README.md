@@ -15,6 +15,7 @@
 | `MODKEY + l` | setmfact +0.05 (shrinks size of window) |
 | `MODKEY + .` | focusmon +1 (switches focus next monitors) |
 | `MODKEY + ,` | focusmon -1 (switches focus to prev monitors) |
+| `M̀ODKEY + r` | run `rofi -show run` |
 
 
 # Running dwm
