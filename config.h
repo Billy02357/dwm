@@ -95,12 +95,11 @@ static const char *dmenucmd[]    = { "dmenu_run", "-i", "-l", "15", "-sb", "whit
 static const char *roficmd[]	= { "rofi", "-show", "run", NULL };
 
 /* the st terminal with tabbed */
-static const char *termcmd[]     = { "alacritty", NULL };
+static const char *termcmd[]     = { "alacritty", "-e", "fish", NULL };
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 
 /* Kira the process killer */
 
-static const char *kiracmd[]	 = { "bash", "~/.scripts/killer" };
 
 static Key keys[] = {
 	/* modifier             key        function        argument */
