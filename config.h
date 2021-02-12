@@ -96,6 +96,7 @@ static const char *roficmd[]	= { "rofi", "-show", "run", NULL };
 
 /* the st terminal with tabbed */
 static const char *termcmd[]     = { "alacritty", "-e", "fish", NULL };
+static const char *stcmd[]	 = { "st", "-e", "fish", NULL };
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 
 /* Kira the process killer */
@@ -105,6 +106,7 @@ static Key keys[] = {
 	/* modifier             key        function        argument */
 	{ MODKEY,		XK_p,	   spawn,          {.v = dmenucmd } },
 	{ MODKEY,               XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,		XK_s,	   spawn,	   {.v = stcmd } },
 	{ Mod1Mask,             XK_Return, spawn,          {.v = tabtermcmd } },
 	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
 	{ MODKEY,               XK_b,      togglebar,      {0} },
