@@ -98,7 +98,9 @@ static const char *roficmd[]	= { "rofi", "-show", "run", NULL };
 static const char *alacrittycmd[]     = { "alacritty", "-e", "fish", NULL };
 static const char *stcmd[]	 = { "st", "-e", "fish", NULL };
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
-static const char *rangercmd[]	 = { "st", "-e", "ranger", NULL};
+static const char *rangercmd[]	 = { "st", "-e", "ranger", NULL };
+static const char *librewolfcmd[]= { "librewolf", NULL };
+
 
 /* Kira the process killer */
 
@@ -111,6 +113,7 @@ static Key keys[] = {
 	{ Mod1Mask,             XK_Return, spawn,          {.v = tabtermcmd } },
 	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
 	{ MODKEY,		XK_f,	   spawn,	   {.v = rangercmd } },
+	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },
 	{ MODKEY,               XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     XK_k,      rotatestack,    {.i = -1 } },
@@ -118,8 +121,8 @@ static Key keys[] = {
 	{ MODKEY,               XK_k,      focusstack,     {.i = +1 } },
 	{ MODKEY,               XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,               XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,               XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,               XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,     XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,     XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,   XK_Return, zoom,           {0} },
 	{ MODKEY,               XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,     XK_c,      killclient,     {0} },
@@ -145,17 +148,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,     XK_period, tagmon,         {.i = +1 } },
 	
-    /* Apps Launched with SUPER + ALT + KEY */
-	{ MODKEY|Mod1Mask,        XK_b,    spawn,          CMD("tabbed -r 2 surf -pe x '.surf/html/homepage.html'") },
-	{ MODKEY|Mod1Mask,        XK_c,    spawn,          CMD("alacritty -e cmus") },
-	{ MODKEY|Mod1Mask,        XK_e,    spawn,          CMD("alacritty -e emacsclient -c -a emacs") },
-	{ MODKEY|Mod1Mask,        XK_f,    spawn,          CMD("alacritty -e vifm") },
-	{ MODKEY|Mod1Mask,        XK_h,    spawn,          CMD("alacritty -e htop") },
-	{ MODKEY|Mod1Mask,        XK_i,    spawn,          CMD("alacritty -e irssi") },
-	{ MODKEY|Mod1Mask,        XK_l,    spawn,          CMD("alacritty -e lynx gopher://distro.tube") },
-	{ MODKEY|Mod1Mask,        XK_n,    spawn,          CMD("alacritty -e newsboat") },
-	{ MODKEY|Mod1Mask,        XK_r,    spawn,          CMD("alacritty -e rtv") },
-	{ MODKEY|Mod1Mask,	  XK_k,	   spawn,	   CMD("alacritty -e bash ~/.scripts/killer") },
+
 	
     /* Dmenu scripts launched with ALT + CTRL + KEY */
 	{ Mod1Mask|ControlMask, XK_e,      spawn,          CMD("./.dmenu/dmenu-edit-configs.sh") },
