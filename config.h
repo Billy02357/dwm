@@ -1,8 +1,4 @@
-/*  ____ _____  */
-/* |  _ \_   _|  Derek Taylor (DistroTube) */
-/* | | | || |  	http://www.youtube.com/c/DistroTube */
-/* | |_| || |  	http://www.gitlab.com/dwt1/ */
-/* |____/ |_|  	*/ 
+/* Billy02357's configuration of Suckless' SWM */
 
 /* See LICENSE file for copyright and license details. */
 /* appearance */
