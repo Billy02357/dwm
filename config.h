@@ -94,7 +94,12 @@ static const char *stcmd[]	 	= { "st", "-e", "fish", NULL };
 static const char *tabtermcmd[]  	= { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 static const char *rangercmd[]	 	= { "st", "-e", "ranger", NULL };
 static const char *librewolfcmd[]	= { "librewolf", NULL };
-static const char *vimcmd[]		= { "st", "-e", TEDITOR, NULL};
+static const char *vimcmd[]		= { "st", "-e", TEDITOR, NULL };
+static const char *gpgcmd[]		= { "gpgcopy", NULL };
+
+
+
+
 
 
 /* Kira the process killer */
@@ -110,6 +115,7 @@ static Key keys[] = {
 	{ MODKEY,		XK_f,	   spawn,	   {.v = rangercmd } },
 	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },
 	{ MODKEY,		XK_v,	   spawn,	   {.v = vimcmd } },
+	{ MODKEY,		XK_g,	   spawn,	   {.v = gpgcmd } },
 	{ MODKEY,               XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     XK_k,      rotatestack,    {.i = -1 } },
@@ -133,7 +139,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,               XK_y,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,               XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,               XK_g,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,     XK_g,      setlayout,      {.v = &layouts[3]} },
 
 	{ MODKEY,               XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,     XK_0,      tag,            {.ui = ~0 } },
