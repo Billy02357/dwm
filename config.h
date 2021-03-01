@@ -1,5 +1,7 @@
 /* Billy02357's configuration of Suckless' SWM */
 
+#define TEDITOR "nvim"
+
 /* See LICENSE file for copyright and license details. */
 /* appearance */
 static const unsigned int borderpx = 2;   /* border pixel of windows */
@@ -85,17 +87,14 @@ static const Layout layouts[] = {
 /* dmenu */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* If you are using the standard dmenu program, use the following. */
-static const char *dmenucmd[]    = { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
-/* If you are using the dmenu-distrotube-git program, use the following for a cooler dmenu! */
-/* static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL }; */
-static const char *roficmd[]	= { "rofi", "-show", "run", NULL };
-
-/* the st terminal with tabbed */
-static const char *alacrittycmd[]     = { "alacritty", "-e", "fish", NULL };
-static const char *stcmd[]	 = { "st", "-e", "fish", NULL };
-static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
-static const char *rangercmd[]	 = { "st", "-e", "ranger", NULL };
-static const char *librewolfcmd[]= { "librewolf", NULL };
+static const char *dmenucmd[]    	= { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
+static const char *roficmd[]		= { "rofi", "-show", "run", NULL };
+static const char *alacrittycmd[]	= { "alacritty", "-e", "fish", NULL };
+static const char *stcmd[]	 	= { "st", "-e", "fish", NULL };
+static const char *tabtermcmd[]  	= { "tabbed", "-r", "2", "st", "-w", "''", NULL };
+static const char *rangercmd[]	 	= { "st", "-e", "ranger", NULL };
+static const char *librewolfcmd[]	= { "librewolf", NULL };
+static const char *vimcmd[]		= { "st", "-e", TEDITOR, NULL};
 
 
 /* Kira the process killer */
@@ -110,6 +109,7 @@ static Key keys[] = {
 	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
 	{ MODKEY,		XK_f,	   spawn,	   {.v = rangercmd } },
 	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },
+	{ MODKEY,		XK_v,	   spawn,	   {.v = vimcmd } },
 	{ MODKEY,               XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     XK_k,      rotatestack,    {.i = -1 } },
