@@ -89,7 +89,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* If you are using the standard dmenu program, use the following. */
 static const char *dmenucmd[]    	= { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
 static const char *roficmd[]		= { "rofi", "-show", "run", NULL };
-static const char *alacrittycmd[]	= { "alacritty", "-e", "fish", NULL };
 static const char *stcmd[]	 	= { "st", "-e", "fish", NULL };
 static const char *tabtermcmd[]  	= { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 static const char *rangercmd[]	 	= { "st", "-e", "ranger", NULL };
@@ -108,7 +107,6 @@ static const char *gpgcmd[]		= { "gpgcopy", NULL };
 static Key keys[] = {
 	/* modifier             key        function        argument */
 	{ MODKEY,		XK_p,	   spawn,          {.v = dmenucmd } },
-	{ MODKEY,               XK_s, 	   spawn,     	   {.v = alacrittycmd } },
 	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },
 	{ Mod1Mask,             XK_Return, spawn,          {.v = tabtermcmd } },
 	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
@@ -180,7 +178,6 @@ static Button buttons[] = {
 	{ ClkLtSymbol,     0,           Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,     0,           Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,     0,           Button2,        zoom,           {0} },
-	{ ClkStatusText,   0,           Button2,        spawn,          {.v = alacrittycmd } },
 	{ ClkClientWin,    MODKEY,      Button1,        movemouse,      {0} },
 	{ ClkClientWin,    MODKEY,      Button2,        togglefloating, {0} },
 	{ ClkClientWin,    MODKEY,      Button3,        resizemouse,    {0} },
