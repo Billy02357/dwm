@@ -94,7 +94,9 @@ static const char *tabtermcmd[]  	= { "tabbed", "-r", "2", "st", "-w", "''", NUL
 static const char *rangercmd[]	 	= { "st", "-e", "ranger", NULL };
 static const char *librewolfcmd[]	= { "librewolf", NULL };
 static const char *vimcmd[]		= { "st", "-e", TEDITOR, NULL };
-static const char *gpgcmd[]		= { "gpgcopy", NULL };
+static const char *gpgcopycmd[]		= { "gpgcopy", NULL };
+static const char *slockcmd[]		= { "slock", NULL };
+static const char *emacscmd[]		= { "emacs", NULL };
 
 
 
@@ -106,14 +108,16 @@ static const char *gpgcmd[]		= { "gpgcopy", NULL };
 
 static Key keys[] = {
 	/* modifier             key        function        argument */
-	{ MODKEY,		XK_p,	   spawn,          {.v = dmenucmd } },
-	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },
-	{ Mod1Mask,             XK_Return, spawn,          {.v = tabtermcmd } },
-	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
-	{ MODKEY,		XK_f,	   spawn,	   {.v = rangercmd } },
-	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },
-	{ MODKEY,		XK_v,	   spawn,	   {.v = vimcmd } },
-	{ MODKEY,		XK_g,	   spawn,	   {.v = gpgcmd } },
+	{ MODKEY,		XK_p,	   spawn,          {.v = dmenucmd } }, 		/* dmenu */
+	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },		/* st terminal */
+	{ Mod1Mask,             XK_Return, spawn,          {.v = tabtermcmd } },	/* tabbed */
+	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },		/* rofi */
+	{ MODKEY,		XK_f,	   spawn,	   {.v = rangercmd } },		/* ranger (running on st) */
+	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },	/* librewolf */
+	{ MODKEY,		XK_v,	   spawn,	   {.v = vimcmd } },		/* vim (running on st) */
+	{ MODKEY,		XK_g,	   spawn,	   {.v = gpgcopycmd } },	/* gpgcopy */
+	{ MODKEY,		XK_h,	   spawn,	   {.v = slockcmd } },		/* slock */
+	{ MODKEY,		XK_e,	   spawn,	   {.v = emacscmd } },		/* emacs */
 	{ MODKEY,               XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     XK_k,      rotatestack,    {.i = -1 } },
