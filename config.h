@@ -6,7 +6,7 @@
 /* appearance */
 static const unsigned int borderpx = 2;   /* border pixel of windows */
 static const unsigned int snap     = 32;  /* snap pixel */
-static const unsigned int gappx    = 20;   /* pixel gap between clients */
+static const unsigned int gappx    = 10;   /* pixel gap between clients */
 static const int showbar           = 1;   /* 0 means no bar */
 static const int topbar            = 1;   /* 0 means bottom bar */
 static const int horizpadbar       = 6;   /* horizontal padding for statusbar */
@@ -89,11 +89,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* If you are using the standard dmenu program, use the following. */
 static const char *dmenucmd[]    	= { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
 static const char *roficmd[]		= { "rofi", "-show", "run", NULL };
-static const char *stcmd[]	 	= { "st", "-e", "fish", NULL };
+static const char *stcmd[]	 	    = { "st", "-e", "fish", NULL };
 static const char *tabtermcmd[]  	= { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 static const char *rangercmd[]	 	= { "st", "-e", "ranger", NULL };
 static const char *librewolfcmd[]	= { "librewolf", NULL };
-static const char *vimcmd[]		= { "st", "-e", TEDITOR, NULL };
+static const char *vimcmd[]		    = { "st", "-e", TEDITOR, NULL };
 static const char *gpgcopycmd[]		= { "gpgcopy", NULL };
 static const char *slockcmd[]		= { "slock", NULL };
 static const char *emacscmd[]		= { "emacs", NULL };
