@@ -1,6 +1,5 @@
 /* Billy02357's configuration of Suckless' SWM */
 
-#define TEDITOR "nvim"
 
 /* See LICENSE file for copyright and license details. */
 /* appearance */
@@ -90,13 +89,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]    	= { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
 static const char *roficmd[]		= { "rofi", "-show", "run", NULL };
 static const char *stcmd[]	 	    = { "st", "-e", "fish", NULL };
-static const char *tabtermcmd[]  	= { "tabbed", "-r", "2", "st", "-w", "''", NULL };
-static const char *rangercmd[]	 	= { "st", "-e", "ranger", NULL };
 static const char *librewolfcmd[]	= { "librewolf", NULL };
-static const char *vimcmd[]		    = { "st", "-e", TEDITOR, NULL };
-static const char *gpgcopycmd[]		= { "gpgcopy", NULL };
 static const char *slockcmd[]		= { "slock", NULL };
-static const char *emacscmd[]		= { "emacs", NULL };
 
 
 
@@ -108,16 +102,11 @@ static const char *emacscmd[]		= { "emacs", NULL };
 
 static Key keys[] = {
 	/* modifier             key        function        argument */
-	{ MODKEY,		XK_p,	   spawn,          {.v = dmenucmd } }, 		/* dmenu */
-	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },		/* st terminal */
-	{ Mod1Mask,             XK_Return, spawn,          {.v = tabtermcmd } },	/* tabbed */
+	{ MODKEY,		XK_p,	   spawn,      {.v = dmenucmd } }, 		/* dmenu */
+	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },		    /* st terminal */
 	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },		/* rofi */
-	{ MODKEY,		XK_f,	   spawn,	   {.v = rangercmd } },		/* ranger (running on st) */
 	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },	/* librewolf */
-	{ MODKEY,		XK_v,	   spawn,	   {.v = vimcmd } },		/* vim (running on st) */
-	{ MODKEY,		XK_g,	   spawn,	   {.v = gpgcopycmd } },	/* gpgcopy */
 	{ MODKEY,		XK_h,	   spawn,	   {.v = slockcmd } },		/* slock */
-	{ MODKEY,		XK_e,	   spawn,	   {.v = emacscmd } },		/* emacs */
 	{ MODKEY,               XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     XK_k,      rotatestack,    {.i = -1 } },
