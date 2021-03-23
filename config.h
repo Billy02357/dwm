@@ -88,7 +88,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* If you are using the standard dmenu program, use the following. */
 static const char *dmenucmd[]    	= { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
 static const char *roficmd[]		= { "rofi", "-show", "run", NULL };
-static const char *stcmd[]	 	    = { "st", "-e", "fish", NULL };
+static const char *stcmd[]	 	    = { "st", "-e", "zsh", NULL };
 static const char *librewolfcmd[]	= { "librewolf", NULL };
 static const char *slockcmd[]		= { "slock", NULL };
 
