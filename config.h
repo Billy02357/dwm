@@ -97,7 +97,6 @@ static const char *slockcmd[]		= { "slock", NULL };
 
 
 
-/* Kira the process killer */
 
 
 static Key keys[] = {
