@@ -1,6 +1,3 @@
-/* Billy02357's configuration of Suckless' SWM */
-
-
 /* See LICENSE file for copyright and license details. */
 /* appearance */
 static const unsigned int borderpx = 2;   /* border pixel of windows */
@@ -86,9 +83,9 @@ static const Layout layouts[] = {
 /* dmenu */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* If you are using the standard dmenu program, use the following. */
-static const char *dmenucmd[]    	= { "dmenu_run", "-i", "-l", "15", "-sb", "white", "-sf", "black", "-p", "Run: ", NULL };
+static const char *dmenucmd[]    	= { "dmenu_run", NULL };
 static const char *roficmd[]		= { "rofi", "-show", "run", NULL };
-static const char *stcmd[]	 	    = { "st", "-e", "zsh", NULL };
+static const char *stcmd[]	 	= { "st", "-e", "zsh", NULL };
 static const char *librewolfcmd[]	= { "librewolf", NULL };
 static const char *slockcmd[]		= { "slock", NULL };
 
@@ -101,11 +98,11 @@ static const char *slockcmd[]		= { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier             key        function        argument */
-	{ MODKEY,		XK_p,	   spawn,      {.v = dmenucmd } }, 		/* dmenu */
-	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },		    /* st terminal */
-	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },		/* rofi */
-	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },	/* librewolf */
-	{ MODKEY,		XK_h,	   spawn,	   {.v = slockcmd } },		/* slock */
+	{ ShiftMask,            XK_m,      spawn,          {.v = dmenucmd } }, 		
+	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },
+	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
+	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },	
+	{ MODKEY,		XK_h,	   spawn,	   {.v = slockcmd } },		
 	{ MODKEY,               XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     XK_k,      rotatestack,    {.i = -1 } },
