@@ -85,7 +85,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* If you are using the standard dmenu program, use the following. */
 static const char *dmenucmd[]    	= { "dmenu_run", NULL };
 static const char *roficmd[]		= { "rofi", "-show", "run", NULL };
-static const char *stcmd[]	 	= { "st", "-e", "zsh", NULL };
+static const char *stcmd[]	 	= { "st", "-e", "tmux", NULL };
 static const char *librewolfcmd[]	= { "librewolf", NULL };
 static const char *slockcmd[]		= { "slock", NULL };
 
@@ -98,7 +98,7 @@ static const char *slockcmd[]		= { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier             key        function        argument */
-	{ ShiftMask,            XK_m,      spawn,          {.v = dmenucmd } }, 		
+	{ MODKEY,               XK_p,      spawn,          {.v = dmenucmd } }, 		
 	{ MODKEY,		XK_Return, spawn,	   {.v = stcmd } },
 	{ MODKEY,		XK_r,	   spawn,	   {.v = roficmd } },
 	{ MODKEY,		XK_l,	   spawn,	   {.v = librewolfcmd } },	
@@ -119,7 +119,7 @@ static Key keys[] = {
     /* Layout manipulation */
 	{ MODKEY,               XK_Tab,    cyclelayout,    {.i = -1 } },
 	{ MODKEY|ShiftMask,     XK_Tab,    cyclelayout,    {.i = +1 } },
-	{ MODKEY,               XK_space,  setlayout,      {0} },
+        { MODKEY,               XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,     XK_space,  togglefloating, {0} },
 
     /* Switch to specific layouts */
@@ -156,8 +156,8 @@ static Key keys[] = {
 	TAGKEYS(                  XK_7,          6)
 	TAGKEYS(                  XK_8,          7)
 	TAGKEYS(                  XK_9,          8)
-	{ MODKEY|ShiftMask,       XK_q,	   quit,		   {0} },
-    { MODKEY|ShiftMask,       XK_r,    quit,           {1} }, 
+	{ MODKEY|ShiftMask,       XK_q,	   quit,           {0} },
+        { MODKEY|ShiftMask,       XK_r,    quit,           {1} }, 
 };
 
 /* button definitions */
